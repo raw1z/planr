@@ -1,0 +1,10 @@
+$custom-font-path: "https://raw1z-cdn.s3.amazonaws.com/fonts/gotham/font.css" !default;
+@import url($custom-font-path);
+
+$icon-font-path: "/fonts/";
+$font-family-sans-serif: gotham, sans-serif;
+
+@import "bootstrap";
+
+$fa-font-path: "/fonts";
+@import "font-awesome";
