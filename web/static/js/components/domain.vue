@@ -1,7 +1,7 @@
 <template>
   <div class="domain">
     <div class="menu">
-      <menu-button url="#" title="Menu"></menu-button>
+      <menu-button url="/domains" title="Domains"></menu-button>
       <div class="domain-name">{{domain.name}}</div>
       <menu-button url="#" title="New"></menu-button>
     </div>
@@ -19,7 +19,24 @@
 
   export default {
     components: { Task, Timer, MenuButton },
-    props: ['domain']
+    props: ['id'],
+    data() {
+      return {
+        domain: null
+      }
+    },
+    created() {
+      this.fetchData()
+    },
+    methods: {
+      fetchData() {
+        let domains = [
+          {id: 1, name: 'Hobby'},
+          {id: 2, name: 'Unowhy'}
+        ]
+        this.domain = domains[this.id - 1]
+      }
+    }
   }
 </script>
 
