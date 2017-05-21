@@ -1,14 +1,10 @@
 <template>
-  <div>{{comment}}</div>
+  <div class="task">{{task.comment}}</div>
 </template>
 
 <script>
 export default {
-  data: function() {
-    return {
-      comment: 'hello'
-    }
-  }
+  props: ['task']
 }
 </script>
 

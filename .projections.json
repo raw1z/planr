@@ -1,0 +1,8 @@
+{
+  "web/static/js/components/*.vue": {
+    "type": "component"
+  },
+  "web/static/css/*.scss": {
+    "type": "stylesheet"
+  }
+}

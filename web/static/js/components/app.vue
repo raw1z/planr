@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    hello
+    <domain :domain="domain"></domain>
   </div>
 </template>
 
 <script>
-export default {
-  data: function() {
-    return {
-      tasks: [
-        {comment: "release planr", archived: false},
-        {comment: "celebrate!", archived: false}
-      ]
+  import Domain from './domain'
+
+  export default {
+    components: { Domain },
+    data: function() {
+      return {
+        domain: {
+          name: "hobby",
+          tasks: [
+            {id: 1, comment: "release planr", archived: false},
+            {id: 2, comment: "celebrate!", archived: false}
+          ]
+        }
+      }
     }
   }
-}
 </script>
