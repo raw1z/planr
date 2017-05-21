@@ -1,4 +1,7 @@
 {
+  "lib/planr/*.ex": {
+    "type": "lib"
+  },
   "web/static/js/components/*.vue": {
     "type": "component"
   },
