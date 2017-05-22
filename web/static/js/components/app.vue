@@ -5,10 +5,7 @@
 </template>
 
 <script>
-  import Domain from './domain'
-
   export default {
-    components: { Domain },
     data: function() {
       return {
         domain: {

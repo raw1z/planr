@@ -2,16 +2,14 @@
   <div class="domains">
     <div class="menu">
       <div class="domain-name">Domains</div>
+      <menu-button url="#" title="New"></menu-button>
     </div>
     <domain-list :domains="domains"></domain-list>
   </div>
 </template>
 
 <script>
-  import DomainList from './domain-list'
-
   export default {
-    components: { DomainList },
     data() {
       return {
         domains: []

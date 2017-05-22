@@ -13,12 +13,7 @@
 </template>
 
 <script>
-  import Task from './task'
-  import Timer from './timer'
-  import MenuButton from './menu-button'
-
   export default {
-    components: { Task, Timer, MenuButton },
     props: ['id'],
     data() {
       return {
