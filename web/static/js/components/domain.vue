@@ -22,7 +22,7 @@
     props: ['id'],
     data() {
       return {
-        domain: null
+        domain: {}
       }
     },
     created() {
@@ -30,11 +30,22 @@
     },
     methods: {
       fetchData() {
-        let domains = [
-          {id: 1, name: 'Hobby'},
-          {id: 2, name: 'Unowhy'}
-        ]
-        this.domain = domains[this.id - 1]
+        let query = `
+        {
+          domain(id: ${this.id}) {
+            id
+            name
+            tasks {
+              id
+              comment
+              archived
+            }
+          }
+        }
+        `
+        axios.post('/api', {query}).then(({data}) => {
+          this.domain = data.data.domain
+        })
       }
     }
   }

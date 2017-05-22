@@ -9,18 +9,15 @@ defmodule Planr.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", Planr do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Planr do
-  #   pipe_through :api
-  # end
+  forward "/api", Absinthe.Plug,
+    schema: Planr.Schema
+
+  forward "/graphiql", Absinthe.Plug.GraphiQL,
+    schema: Planr.Schema
 end

@@ -22,10 +22,17 @@
     },
     methods: {
       fetchData() {
-        this.domains = [
-          {id: 1, name: 'Hobby'},
-          {id: 2, name: 'Unowhy'}
-        ]
+        let query = `
+        {
+          domains {
+            id
+            name
+          }
+        }
+        `
+        axios.post('/api', {query}).then(({data}) => {
+          this.domains = data.data.domains
+        })
       }
     }
   }

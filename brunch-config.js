@@ -67,7 +67,8 @@ exports.config = {
     enabled: true,
     globals: {
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
+      axios: 'axios'
     },
     styles: {
       'bootstrap-multiselect': ['dist/css/bootstrap-multiselect.css']
