@@ -88,3 +88,25 @@ body, html {
     }
   }
 }
+
+.domains {
+  .list-group-item.creating {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+
+    input[type="text"] {
+      border-radius: 0;
+    }
+
+    .btn {
+      &.ok {
+        border-radius: 0;
+      }
+
+      &.cancel {
+        border-radius: 0;
+      }
+    }
+  }
+}

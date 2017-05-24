@@ -2,9 +2,11 @@
   <div class="domains">
     <div class="menu">
       <div class="domain-name">Domains</div>
-      <menu-button url="#" title="New"></menu-button>
+      <div class="menu-button">
+        <a v-on:click="newDomain">new</a>
+      </div>
     </div>
-    <domain-list :domains="domains"></domain-list>
+    <domain-list :domains="domains" :creating="showNewDomain" v-on:new="createNewDomain" v-on:cancel="cancelNewDomain"></domain-list>
   </div>
 </template>
 
@@ -12,7 +14,8 @@
   export default {
     data() {
       return {
-        domains: []
+        domains: [],
+        showNewDomain: false
       }
     },
     created() {
@@ -31,6 +34,23 @@
         axios.post('/api', {query}).then(({data}) => {
           this.domains = data.data.domains
         })
+      },
+
+      newDomain() {
+        this.showNewDomain = true
+      },
+
+      createDomain() {
+        console.log("hum")
+      },
+
+      createNewDomain(name) {
+        this.showNewDomain = false
+        console.log(name)
+      },
+
+      cancelNewDomain() {
+        this.showNewDomain = false
       }
     }
   }
